@@ -22,18 +22,18 @@ namespace _5._3.TheRace
 
         public void Add(Racer racer)
         {
-            if (Count < Capacity)
+            if (this.Count < this.Capacity)
             {
-                Racers.Add(racer);
+                this.Racers.Add(racer);
             }
         }
 
         public bool Remove(string name)
         {
-            if (Racers.Any(x => x.Name == name))
+            if (this.Racers.Any(x => x.Name == name))
             {
-                Racer racer = Racers.FirstOrDefault(x => x.Name == name);
-                Racers.Remove(racer);
+                Racer racer = this.Racers.FirstOrDefault(x => x.Name == name);
+                this.Racers.Remove(racer);
                 return true;
             }
             return false;
@@ -41,21 +41,21 @@ namespace _5._3.TheRace
 
         public Racer GetOldestRacer()
         {
-            return Racers.OrderByDescending(x => x.Age).FirstOrDefault();
+            return this.Racers.OrderByDescending(x => x.Age).FirstOrDefault();
         }
 
         public Racer GetRacer(string name)
         {
-            return Racers.FirstOrDefault(x => x.Name == name);
+            return this.Racers.FirstOrDefault(x => x.Name == name);
         }
 
         public Racer GetFastestRacer()
         {
-            Racer racer = Racers.OrderByDescending(x => x.Car.Speed).FirstOrDefault();
+            Racer racer = this.Racers.OrderByDescending(x => x.Car.Speed).FirstOrDefault();
             return racer;
         }
 
-        public int Count => Racers.Count;
+        public int Count => this.Racers.Count;
 
         public string Report()
         {

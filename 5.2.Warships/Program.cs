@@ -48,28 +48,28 @@ internal class Program
                 matrix[currRow, currCol] = "X";
                 leftShipsPlayerOne--;
                 sunkShips++;
-                if (!IsPlayersShipAlive(matrix, matrixSize, "<"))
-                {
-                    Console.WriteLine($"Player Two has won the game! {sunkShips} ships have been sunk in the battle.");
-                    return;
-                }
             }
             else if (matrix[currRow, currCol] == ">")
             {
                 matrix[currRow, currCol] = "X";
                 leftShipsPlayerTwo--;
                 sunkShips++;
-
-                if (!IsPlayersShipAlive(matrix, matrixSize, ">"))
-                {
-                    Console.WriteLine($"Player One has won the game! {sunkShips} ships have been sunk in the battle.");
-                    return;
-                }
             }
             else if (matrix[currRow, currCol] == "*")
             {
                 continue;
             }
+            if (!IsPlayersShipAlive(matrix, matrixSize, ">"))
+            {
+                Console.WriteLine($"Player One has won the game! {sunkShips} ships have been sunk in the battle.");
+                return;
+            }
+            if (!IsPlayersShipAlive(matrix, matrixSize, "<"))
+            {
+                Console.WriteLine($"Player Two has won the game! {sunkShips} ships have been sunk in the battle.");
+                return;
+            }
+            
         }
 
         Console.WriteLine($"It's a draw! Player One has {leftShipsPlayerOne} ships left. Player Two has {leftShipsPlayerTwo} ships left.");
