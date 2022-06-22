@@ -54,95 +54,94 @@ internal class Program
 
         };
 
-        for (int i = 0; i < 13; i++)
+        while (true)
         {
             //white moves
-            if (i % 2 == 0)
+
+            //check idx left diagonal
+
+            if (IsIdxsValid(whiteRow - 1, whiteCol - 1, matrix))
             {
-                //check idx left diagonal
-                if (IsIdxsValid(whiteRow - 1, whiteCol - 1, matrix))
+                if (matrix[whiteRow - 1, whiteCol - 1] == 'b')
                 {
-                    if (matrix[whiteRow - 1, whiteCol - 1] == 'b')
-                    {
-                        matrix[whiteRow, whiteCol] = '-';
+                    matrix[whiteRow, whiteCol] = '-';
 
-                        doesWhiteCaptureBlack = true;
-                        whiteRow = whiteRow - 1;
-                        whiteCol = whiteCol - 1;
-                        matrix[whiteRow, whiteCol] = 'w';
-                        break;
-                    }
-                }
-                //check idx right diagonal
-                if (IsIdxsValid(whiteRow - 1, whiteCol + 1, matrix))
-                {
-                    if (matrix[whiteRow - 1, whiteCol + 1] == 'b')
-                    {
-                        matrix[whiteRow, whiteCol] = '-';
-
-                        doesWhiteCaptureBlack = true;
-                        whiteRow = whiteRow - 1;
-                        whiteCol = whiteCol + 1;
-                        matrix[whiteRow, whiteCol] = 'w';
-                        break;
-                    }
-                }
-                //check idx forward
-                matrix[whiteRow, whiteCol] = '-';
-                whiteRow = whiteRow - 1;
-
-                if (whiteRow == 0)
-                {
-                    isWhitePromotedToQueen = true;
+                    doesWhiteCaptureBlack = true;
+                    whiteRow = whiteRow - 1;
+                    whiteCol = whiteCol - 1;
                     matrix[whiteRow, whiteCol] = 'w';
                     break;
                 }
-                matrix[whiteRow, whiteCol] = 'w';
             }
-            //black moves
-            else
+            //check idx right diagonal
+            if (IsIdxsValid(whiteRow - 1, whiteCol + 1, matrix))
             {
-                //check idx left diagonal
-                if (IsIdxsValid(blackRow + 1, blackCol - 1, matrix))
+                if (matrix[whiteRow - 1, whiteCol + 1] == 'b')
                 {
-                    if (matrix[blackRow + 1, blackCol - 1] == 'w')
-                    {
-                        matrix[blackRow, blackCol] = '-';
+                    matrix[whiteRow, whiteCol] = '-';
 
-                        doesBlackCaptureWhite = true;
-                        blackRow = blackRow + 1;
-                        blackCol = blackCol - 1;
-                        matrix[blackRow, blackCol] = 'b';
-                        break;
-                    }
+                    doesWhiteCaptureBlack = true;
+                    whiteRow = whiteRow - 1;
+                    whiteCol = whiteCol + 1;
+                    matrix[whiteRow, whiteCol] = 'w';
+                    break;
                 }
-                //check idx right diagonal
-                if (IsIdxsValid(blackRow + 1, blackCol + 1, matrix))
-                {
-                    if (matrix[blackRow + 1, blackCol + 1] == 'w')
-                    {
-                        matrix[blackRow, blackCol] = '-';
+            }
+            //check idx forward
+            matrix[whiteRow, whiteCol] = '-';
+            whiteRow = whiteRow - 1;
 
-                        doesBlackCaptureWhite = true;
-                        blackRow = blackRow + 1;
-                        blackCol = blackCol + 1;
-                        matrix[blackRow, blackCol] = 'b';
-                        break;
-                    }
-                }
-                //check idx forward
-                matrix[blackRow, blackCol] = '-';
-                blackRow = blackRow + 1;
+            if (whiteRow == 0)
+            {
+                isWhitePromotedToQueen = true;
+                matrix[whiteRow, whiteCol] = 'w';
+                break;
+            }
+            matrix[whiteRow, whiteCol] = 'w';
 
-                if (blackRow == 7)
+            //black moves
+
+            //check idx left diagonal
+            if (IsIdxsValid(blackRow + 1, blackCol - 1, matrix))
+            {
+                if (matrix[blackRow + 1, blackCol - 1] == 'w')
                 {
-                    isBlackPromotedToQueen = true;
+                    matrix[blackRow, blackCol] = '-';
+
+                    doesBlackCaptureWhite = true;
+                    blackRow = blackRow + 1;
+                    blackCol = blackCol - 1;
                     matrix[blackRow, blackCol] = 'b';
                     break;
                 }
-                matrix[blackRow, blackCol] = 'b';
             }
+            //check idx right diagonal
+            if (IsIdxsValid(blackRow + 1, blackCol + 1, matrix))
+            {
+                if (matrix[blackRow + 1, blackCol + 1] == 'w')
+                {
+                    matrix[blackRow, blackCol] = '-';
+
+                    doesBlackCaptureWhite = true;
+                    blackRow = blackRow + 1;
+                    blackCol = blackCol + 1;
+                    matrix[blackRow, blackCol] = 'b';
+                    break;
+                }
+            }
+            //check idx forward
+            matrix[blackRow, blackCol] = '-';
+            blackRow = blackRow + 1;
+
+            if (blackRow == 7)
+            {
+                isBlackPromotedToQueen = true;
+                matrix[blackRow, blackCol] = 'b';
+                break;
+            }
+            matrix[blackRow, blackCol] = 'b';
         }
+
 
         if (isWhitePromotedToQueen)
         {
@@ -150,20 +149,37 @@ internal class Program
         }
         else if (doesWhiteCaptureBlack)
         {
-            Console.WriteLine($"Game over! White pawn capture on {mapColsToLetters[whiteCol]}{8 - whiteRow}.");
+            Console.WriteLine($"Game over! White capture on {mapColsToLetters[whiteCol]}{8 - whiteRow}.");
         }
         else if (isBlackPromotedToQueen)
         {
-            Console.WriteLine($"Game over! Black  is promoted to a queen at {mapColsToLetters[blackCol]}8.");
+            Console.WriteLine($"Game over! Black pawn is promoted to a queen at {mapColsToLetters[blackCol]}1.");
         }
         else if (doesBlackCaptureWhite)
         {
-            Console.WriteLine($"Game over! Black pawn capture on {mapColsToLetters[blackCol]}{blackRow + 1}.");
+            Console.WriteLine($"Game over! Black capture on {mapColsToLetters[blackCol]}{8 - blackRow}.");
         }
     }
 
     private static bool IsIdxsValid(int currRow, int currCol, char[,] matrix)
     {
         return currRow >= 0 && currRow < matrix.GetLength(0) && currCol >= 0 && currCol < matrix.GetLength(1);
+    }
+
+    private static Tuple<int, int> FindIndexes(char[,] matrix, char color)
+    {
+
+        for (int row = 0; row < matrix.GetLength(0); row++)
+        {
+            char[] colEl = Console.ReadLine().ToCharArray();
+
+            for (int col = 0; col < matrix.GetLength(1); col++)
+            {
+                if (matrix[row, col] == color)
+                {
+                    return new Tuple<int, int>(row, col);
+                }
+            }
+        }
     }
 }
