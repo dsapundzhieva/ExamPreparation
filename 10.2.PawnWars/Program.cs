@@ -165,21 +165,4 @@ internal class Program
     {
         return currRow >= 0 && currRow < matrix.GetLength(0) && currCol >= 0 && currCol < matrix.GetLength(1);
     }
-
-    private static Tuple<int, int> FindIndexes(char[,] matrix, char color)
-    {
-
-        for (int row = 0; row < matrix.GetLength(0); row++)
-        {
-            char[] colEl = Console.ReadLine().ToCharArray();
-
-            for (int col = 0; col < matrix.GetLength(1); col++)
-            {
-                if (matrix[row, col] == color)
-                {
-                    return new Tuple<int, int>(row, col);
-                }
-            }
-        }
-    }
 }

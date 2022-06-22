@@ -65,17 +65,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10.3.StockMarket", "10.3.St
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10.02.PawnWars", "10.02.PawnWars\10.02.PawnWars.csproj", "{35A7E602-5C5B-406A-9A1A-C5851533D48F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.1.Blacksmith", "11.1.Blacksmith\11.1.Blacksmith.csproj", "{3515E664-490D-47E3-A39A-828077DEFF27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11.1.Blacksmith", "11.1.Blacksmith\11.1.Blacksmith.csproj", "{3515E664-490D-47E3-A39A-828077DEFF27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.2.Armory", "11.2.Armory\11.2.Armory.csproj", "{6B845D0B-271A-4CFB-B228-675986EB2C4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11.2.Armory", "11.2.Armory\11.2.Armory.csproj", "{6B845D0B-271A-4CFB-B228-675986EB2C4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.3.Drones", "12.3.Drones\11.3.Drones.csproj", "{DC168A50-7F09-48E6-9B4A-8B7EA2AF3828}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11.3.Drones", "12.3.Drones\11.3.Drones.csproj", "{DC168A50-7F09-48E6-9B4A-8B7EA2AF3828}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12.1.BakeryShop", "12.1.BakeryShop\12.1.BakeryShop.csproj", "{96090166-8D71-455E-9715-753DE2AE7AEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12.1.BakeryShop", "12.1.BakeryShop\12.1.BakeryShop.csproj", "{96090166-8D71-455E-9715-753DE2AE7AEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12.2.BeaverAtWork", "12.2.BeaverAtWork\12.2.BeaverAtWork.csproj", "{393887E6-D396-4903-8660-39D9C5EDA87F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12.2.BeaverAtWork", "12.2.BeaverAtWork\12.2.BeaverAtWork.csproj", "{393887E6-D396-4903-8660-39D9C5EDA87F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12.3.FishingNet", "12.3.FishingNet\12.3.FishingNet.csproj", "{D17EA42B-A326-4D26-B95A-3AC3B60280C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12.3.FishingNet", "12.3.FishingNet\12.3.FishingNet.csproj", "{D17EA42B-A326-4D26-B95A-3AC3B60280C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13.1.MealPlan", "13.1.MealPlan\13.1.MealPlan.csproj", "{4453C3F9-6C80-474E-8451-2BFBDE56D779}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13.2.TruffleHunter", "13.2.TruffleHunter\13.2.TruffleHunter.csproj", "{F60F5FFB-9FA7-4539-9411-52F777AC1394}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13.3.Zoo", "13.3.Zoo\13.3.Zoo.csproj", "{69F4DA63-9BC3-4662-964A-09C3D82681B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -231,6 +237,18 @@ Global
 		{D17EA42B-A326-4D26-B95A-3AC3B60280C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D17EA42B-A326-4D26-B95A-3AC3B60280C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D17EA42B-A326-4D26-B95A-3AC3B60280C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4453C3F9-6C80-474E-8451-2BFBDE56D779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4453C3F9-6C80-474E-8451-2BFBDE56D779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4453C3F9-6C80-474E-8451-2BFBDE56D779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4453C3F9-6C80-474E-8451-2BFBDE56D779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F60F5FFB-9FA7-4539-9411-52F777AC1394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F60F5FFB-9FA7-4539-9411-52F777AC1394}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F60F5FFB-9FA7-4539-9411-52F777AC1394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F60F5FFB-9FA7-4539-9411-52F777AC1394}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69F4DA63-9BC3-4662-964A-09C3D82681B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69F4DA63-9BC3-4662-964A-09C3D82681B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69F4DA63-9BC3-4662-964A-09C3D82681B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69F4DA63-9BC3-4662-964A-09C3D82681B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
